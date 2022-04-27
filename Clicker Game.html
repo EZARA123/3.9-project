@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click the Button</title>
+    <h4> Click the Button</h4>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <input type="image" name="Red" id="Red" src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL+eCL.png">
+        <p id="number"></p>
+    </div>
+    <div class="content">
+        <input type="image" name="Double" id="Double" src="https://www.owhc.org/_preview/medium/uploads/Images/click-here-4298145_960_720.png">
+    </div>
+</div>
+<script>
+    const red = document.getElementById('Red');
+    let count = document.getElementById('number');
+    const double = document.getElementById('Double');
+    let more= 1
+
+    red.addEventListener('click', function(){
+        let total=+count.textContent+more;
+        console.log(total);
+        count.innerHTML = total;
+    })
+
+    double.addEventListener('click', function(){
+        if(+count.textContent > 100){
+            more+=1;
+            count.textContent-=100;
+        }
+        let total=+count.textContent+more;
+        console.log(total);
+        count.innerHTML = total;
+    })
+
+
+</script>
+</body>
+</html>
